@@ -245,7 +245,7 @@ public class Database {
     }
 
     public static void printDateRanges(List<String[]> dateRanges, boolean showPrice) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         int count = 1;
         for (String[] dateRange : dateRanges) {
             String startDate = dateRange[0];
@@ -261,7 +261,7 @@ public class Database {
     }
 
     public static boolean checkDateInRange(String startDate, String endDate, List<String[]> dateRanges, boolean shouldInRange) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate start = LocalDate.parse(startDate, formatter);
         LocalDate end = LocalDate.parse(endDate, formatter);
 
@@ -430,7 +430,7 @@ public class Database {
         String endDateStr = ranges[1];
 
         // Parse start and end dates as LocalDate objects
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate startDate = LocalDate.parse(startDateStr, formatter);
         LocalDate endDate = LocalDate.parse(endDateStr, formatter);
 
@@ -850,7 +850,7 @@ public class Database {
     }
     
     public static boolean doDatesNotOverlap(String startDate, String endDate, List<String[]> dateRanges) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate start = LocalDate.parse(startDate, formatter);
         LocalDate end = LocalDate.parse(endDate, formatter);
 
@@ -868,7 +868,7 @@ public class Database {
     
 
     public static boolean isDateInRange(String startDate, String endDate, List<String[]> dateRanges) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate start = LocalDate.parse(startDate, formatter);
         LocalDate end = LocalDate.parse(endDate, formatter);
 
@@ -887,7 +887,7 @@ public class Database {
 
     private static boolean isValidDateRange(String date, boolean afterToday) {
         try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Date inputDate = dateFormat.parse(date);
             Date today = new Date();
             
